@@ -8,7 +8,6 @@
 #include "../include/types.h"
 
 #define WALL_COLOUR 0, 0, 0, 255
-#define WALL_THICKNESS 30
 
 void draw_walls(t_game *pGame) {
     SDL_SetRenderDrawColor(pGame->renderer, WALL_COLOUR); // Set the walls colour
@@ -17,7 +16,7 @@ void draw_walls(t_game *pGame) {
     SDL_Rect wall_rect = {
             .x = 0, // Upper left corner x position
             .y = 0, // Upper left corner y position
-            .w = WALL_THICKNESS,
+            .w = pGame->wall_thickness,
             .h = pGame->screen_height
     };
 
@@ -25,17 +24,17 @@ void draw_walls(t_game *pGame) {
     SDL_RenderFillRect(pGame->renderer, &wall_rect);
 
     // Create the right wall and fill the rect.
-    wall_rect.x = pGame->screen_width - WALL_THICKNESS;
+    wall_rect.x = pGame->screen_width - pGame->wall_thickness;
     SDL_RenderFillRect(pGame->renderer, &wall_rect);
 
     // Create a Top Wall and fill rect.
     wall_rect.x = 0;
     wall_rect.y = 0;
     wall_rect.w = pGame->screen_width;
-    wall_rect.h = WALL_THICKNESS;
+    wall_rect.h = pGame->wall_thickness;
     SDL_RenderFillRect(pGame->renderer, &wall_rect);
 
     // Create a bottom wall and fill
-    wall_rect.y = pGame->screen_height - WALL_THICKNESS;
+    wall_rect.y = pGame->screen_height - pGame->wall_thickness;
     SDL_RenderFillRect(pGame->renderer, &wall_rect);
 }

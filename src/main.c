@@ -5,6 +5,7 @@
 #include "../include/check_btn_pressed.h"
 #include "../include/init_sdl.h"
 #include "../include/draw_walls.h"
+#include "../include/draw_snake.h"
 
 #define SCREEN_BACKGROUND 0, 100, 25, 255
 
@@ -12,9 +13,10 @@ int main(void)
 {
     t_game *pGame = malloc(sizeof(t_game));
 
-    // Set screen height and the width
+    // Set screen height, width and wall thickness.
     pGame->screen_height = 600;
     pGame->screen_width = 800;
+    pGame->wall_thickness = 30;
 
     init_sdl(pGame); // Init SDL
 
@@ -30,11 +32,16 @@ int main(void)
 
         check_btn_pressed(pGame); // Check for button pressed events.
 
-        draw_walls(pGame);
+        draw_walls(pGame); // Draw the walls of the game.
+
+        draw_snake(pGame); // Draw snake to screen
 
         SDL_RenderPresent(pGame->renderer); // Update the screen
+
+        SDL_Delay(250);
     }
 
+    pGame = NULL;
     free(pGame);
 
     return 0;
