@@ -23,8 +23,8 @@ bool init_sdl(t_game *pGame)
     pGame->window = SDL_CreateWindow("Score: 0",
                                      SDL_WINDOWPOS_UNDEFINED,
                                      SDL_WINDOWPOS_UNDEFINED,
-                                     SCREEN_WIDTH,
-                                     SCREEN_HEIGHT,
+                                     pGame->screen_width,
+                                     pGame->screen_height,
                                      SDL_WINDOW_SHOWN);
     if (!pGame->window)
     {

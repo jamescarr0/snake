@@ -4,15 +4,21 @@
 #include "../include/types.h"
 #include "../include/check_btn_pressed.h"
 #include "../include/init_sdl.h"
+#include "../include/draw_walls.h"
 
-#define SCREEN_BACKGROUND 0, 0, 0, 255
+#define SCREEN_BACKGROUND 0, 100, 25, 255
 
 int main(void)
 {
-
     t_game *pGame = malloc(sizeof(t_game));
 
-    init_sdl(pGame);
+    // Set screen height and the width
+    pGame->screen_height = 600;
+    pGame->screen_width = 800;
+
+    init_sdl(pGame); // Init SDL
+
+    // Init successful set game state.
     pGame->running = true;
 
     // Main game loop
@@ -23,6 +29,8 @@ int main(void)
         SDL_RenderClear(pGame->renderer);
 
         check_btn_pressed(pGame); // Check for button pressed events.
+
+        draw_walls(pGame);
 
         SDL_RenderPresent(pGame->renderer); // Update the screen
     }

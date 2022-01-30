@@ -8,6 +8,8 @@
 
 typedef struct
 {
+    short screen_height;
+    short screen_width;
     SDL_Renderer *renderer;
     SDL_Window *window;
     bool running;
