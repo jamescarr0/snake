@@ -5,6 +5,7 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
 #include "../include/types.h"
+#include "../include/change_direction.h"
 
 void check_btn_pressed(t_game *pGame) {
 
@@ -24,9 +25,25 @@ void check_btn_pressed(t_game *pGame) {
                         pGame->running = false;
                         break;
 
-                    case SDLK_RIGHT:
-                        // Right key pressed
+                    case SDLK_UP:
+                        change_direction(pGame, SDLK_UP);
                         break;
+
+                    case SDLK_RIGHT:
+                        change_direction(pGame, SDLK_RIGHT);
+                        break;
+
+                    case SDLK_DOWN:
+                        change_direction(pGame, SDLK_DOWN);
+                        break;
+
+                    case SDLK_LEFT:
+                        change_direction(pGame, SDLK_LEFT);
+                        break;
+
+                    default:
+                        break;
+
                 }
         }
     }
