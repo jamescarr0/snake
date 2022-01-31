@@ -9,8 +9,7 @@
 
 #define SCREEN_BACKGROUND 0, 100, 25, 255
 
-int main(void)
-{
+int main(void) {
     t_game *pGame = malloc(sizeof(t_game));
 
     // Set screen height, width and wall thickness.
@@ -24,8 +23,7 @@ int main(void)
     pGame->running = true;
 
     // Main game loop
-    while (pGame->running)
-    {
+    while (pGame->running) {
         // Set background colour and clear the screen
         SDL_SetRenderDrawColor(pGame->renderer, SCREEN_BACKGROUND);
         SDL_RenderClear(pGame->renderer);

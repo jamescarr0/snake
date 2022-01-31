@@ -15,7 +15,7 @@
 
 void draw_snake(t_game *pGame) {
 
-    if(!pGame->snake_init) {
+    if (!pGame->snake_init) {
         printf("Init snake segments\n");
         int max_snake_length = (pGame->screen_width -
                                 (pGame->wall_thickness * 2) * (pGame->screen_height - (pGame->wall_thickness * 2)) /
@@ -23,15 +23,33 @@ void draw_snake(t_game *pGame) {
 
         SDL_Rect snake[max_snake_length];
         pGame->snake = snake;
+
+        for (int i = 0; i < sizeof(snake) / sizeof(snake[0]); ++i) {
+            printf("%i init segment to zero\n", i);
+            pGame->snake[i].x = 0;
+            pGame->snake[i].y = 0;
+            pGame->snake[i].w = 0;
+            pGame->snake[i].h = 0;
+        }
+
         pGame->snake_init = 1;
     }
 
-    // Draw the snakes head.
+    // Draw the snakes head. The head is Snake[0] - the first element
     SDL_SetRenderDrawColor(pGame->renderer, SNAKE_HEAD_COLOR);
+    pGame->snake[0].x = SNAKE_START_X;
+    pGame->snake[0].y = SNAKE_START_Y;
+    pGame->snake[0].w = SNAKE_SEGMENT_WIDTH;
+    pGame->snake[0].h = SNAKE_SEGMENT_HEIGHT;
+
     SDL_RenderFillRect(pGame->renderer, (pGame->snake));
 
-    pGame->snake->x = SNAKE_START_X;
-    pGame->snake->y = SNAKE_START_Y;
-    pGame->snake->w = SNAKE_SEGMENT_WIDTH;
-    pGame->snake->h = SNAKE_SEGMENT_HEIGHT;
+    for (int i = 1; i < 5; ++i) {
+        pGame->snake[i].x = SNAKE_START_X - ((SNAKE_SEGMENT_WIDTH+3) * i);
+        pGame->snake[i].y = SNAKE_START_Y;
+        pGame->snake[i].w = SNAKE_SEGMENT_WIDTH;
+        pGame->snake[i].h = SNAKE_SEGMENT_HEIGHT;
+
+        SDL_RenderFillRect(pGame->renderer, (pGame->snake) + i);
+    }
 }

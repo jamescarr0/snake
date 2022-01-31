@@ -8,9 +8,6 @@
 #include "../include/types.h"
 #include "../include/terminate.h"
 
-#define SCREEN_WIDTH 800
-#define SCREEN_HEIGHT 600
-
 bool init_sdl(t_game *pGame)
 {
     if (SDL_Init(SDL_INIT_VIDEO) < 0)

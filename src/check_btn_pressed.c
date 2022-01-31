@@ -6,26 +6,27 @@
 #include <stdbool.h>
 #include "../include/types.h"
 
-void check_btn_pressed(t_game *pGame)
-{
+void check_btn_pressed(t_game *pGame) {
 
     SDL_Event event;
-    while (SDL_PollEvent(&event))
-    {
+    while (SDL_PollEvent(&event)) {
 
-        switch (event.type)
-        {
+        switch (event.type) {
 
             case SDL_MOUSEMOTION:
-                printf("Mouse event, TODO\n");
+                // Mouse event.
                 break;
 
             case SDL_KEYDOWN:
-                switch (event.key.keysym.sym)
-                {
+                switch (event.key.keysym.sym) {
                     case SDLK_ESCAPE:
-                        printf("Escape key pressed\n");
+                        // Escape key pressed, set game running state false to end main game loop.
                         pGame->running = false;
+                        break;
+
+                    case SDLK_RIGHT:
+                        // Right key pressed
+
                         break;
                 }
         }
