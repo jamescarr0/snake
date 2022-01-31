@@ -5,6 +5,7 @@
 #include "../include/check_btn_pressed.h"
 #include "../include/init_sdl.h"
 #include "../include/draw_walls.h"
+#include "../include/spawn_snake.h"
 #include "../include/draw_snake.h"
 
 #define SCREEN_BACKGROUND 0, 100, 25, 255
@@ -22,24 +23,27 @@ int main(void) {
     // Init successful set game state.
     pGame->running = true;
 
+    spawn_snake(pGame); // Spawn the snake.
+
     // Main game loop
     while (pGame->running) {
+
         // Set background colour and clear the screen
         SDL_SetRenderDrawColor(pGame->renderer, SCREEN_BACKGROUND);
         SDL_RenderClear(pGame->renderer);
 
         check_btn_pressed(pGame); // Check for button pressed events.
 
-        draw_walls(pGame); // Draw the walls of the game.
+        draw_snake(pGame);
 
-        draw_snake(pGame); // Draw snake to screen
+        draw_walls(pGame); // Draw the walls of the game.
 
         SDL_RenderPresent(pGame->renderer); // Update the screen
 
         SDL_Delay(250);
     }
 
-    pGame = NULL;
+    free(pGame->snake);
     free(pGame);
 
     return 0;

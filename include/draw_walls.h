@@ -5,6 +5,6 @@
 #ifndef SNAKE_DRAW_WALLS_H
 #define SNAKE_DRAW_WALLS_H
 
-void draw_walls(t_game *);
+void draw_walls(t_game *pGame);
 
 #endif //SNAKE_DRAW_WALLS_H

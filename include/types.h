@@ -12,13 +12,15 @@ typedef struct
     short screen_width;
     short wall_thickness;
 
+    int snake_arr_len;
+
     SDL_Renderer *renderer;
     SDL_Window *window;
 
     SDL_Rect *snake;
 
     bool running;
-    bool snake_init;
+
 } t_game;
 
 #endif //SNAKE_TYPES_H

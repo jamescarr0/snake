@@ -26,7 +26,6 @@ void check_btn_pressed(t_game *pGame) {
 
                     case SDLK_RIGHT:
                         // Right key pressed
-
                         break;
                 }
         }
