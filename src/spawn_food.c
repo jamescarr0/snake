@@ -5,11 +5,32 @@
 #include "../include/types.h"
 
 void spawn_food(t_game *pGame) {
-    int x = (rand() % (((pGame->screen_width - (pGame->wall_thickness * 2)) / pGame->snake_seg_size)) *
+    // Randomly generate x and y co-ordinates for food.
+
+    int food_xy_set = false;
+    int x;
+    int y;
+
+    while (!food_xy_set) {
+        x = (rand() % (((pGame->screen_width - (pGame->wall_thickness * 2)) / pGame->snake_seg_size)) *
              pGame->snake_seg_size);
-    int y = (rand() % (((pGame->screen_height - (pGame->wall_thickness * 2)) / pGame->snake_seg_size)) *
+        y = (rand() % (((pGame->screen_height - (pGame->wall_thickness * 2)) / pGame->snake_seg_size)) *
              pGame->snake_seg_size);
-    printf("Spawning food at x:%d y:%d\n", x, y);
+
+        // If food is spawned in the wall, adjust and place inside wall on the map.
+        if (x == 0) x += pGame->wall_thickness;
+        if (y == 0) y += pGame->wall_thickness;
+
+        // DO NOT spawn food on snake body segments.
+        for (int i = 0; i < pGame->snake_arr_len; ++i) {
+            if (x == pGame->snake[i].x && y == pGame->snake[i].y) {
+                break;
+            }
+        }
+        food_xy_set = true;
+    }
+
+    // Update food coordinates.
     pGame->food.x = x;
     pGame->food.y = y;
 }

@@ -3,6 +3,7 @@
 //
 
 #include "../include/types.h"
+#include "../include/spawn_food.h"
 
 void check_collision(t_game *pGame) {
 
@@ -12,6 +13,11 @@ void check_collision(t_game *pGame) {
         ((pGame->snake[0].y + pGame->snake_seg_size) > (pGame->screen_height - pGame->wall_thickness)) ||
         (pGame->snake[0].y < pGame->wall_thickness)) {
         pGame->game_over = true;
+    }
+
+    /* Food Collision */
+    if(pGame->snake[0].x == pGame->food.x && pGame->snake[0].y == pGame->food.y) {
+        spawn_food(pGame);
     }
 
 }
