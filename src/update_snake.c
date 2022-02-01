@@ -18,6 +18,7 @@ void update_snake(t_game *pGame) {
 
 
     if (pGame->grow_snake) {
+        // Do not remove a tail and increase snake size.
         pGame->grow_snake = false;
     } else {
         // Remove the tail after a new head has been created.

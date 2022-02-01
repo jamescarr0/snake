@@ -25,9 +25,8 @@ void spawn_food(t_game *pGame) {
         for (int i = 0; i < pGame->snake_arr_len; ++i) {
             if (x == pGame->snake[i].x && y == pGame->snake[i].y) {
                 break;
-            }
+            } else if (i == pGame->snake_arr_len - 1) food_xy_set = true;
         }
-        food_xy_set = true;
     }
 
     // Update food coordinates.
