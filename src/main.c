@@ -13,7 +13,7 @@
 #include "../include/spawn_food.h"
 #include "../include/draw_food.h"
 
-#define SCREEN_BACKGROUND 0, 100, 25, 255
+#define SCREEN_BACKGROUND 0, 90, 55, 255
 #define SEGMENT_SIZE 20
 
 int main(void) {
