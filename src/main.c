@@ -8,15 +8,16 @@
 #include "../include/spawn_snake.h"
 #include "../include/draw_snake.h"
 #include "../include/update_snake.h"
+#include "../include/check_collision.h"
 
 #define SCREEN_BACKGROUND 0, 100, 25, 255
 
 int main(void) {
     t_game *pGame = malloc(sizeof(t_game));
     pGame->screen_height = 640;
-    pGame->screen_width = 1024;
-    pGame->wall_thickness = 25;
-    pGame->snake_seg_size = 25;
+    pGame->screen_width = 1040;
+    pGame->wall_thickness = 20;
+    pGame->snake_seg_size = 20;
     pGame->x_pos = pGame->snake_seg_size;
     pGame->y_pos = 0;
 
@@ -24,6 +25,7 @@ int main(void) {
 
     // Init successful set game state.
     pGame->running = true;
+    pGame->game_over = false;
 
     spawn_snake(pGame); // Create and spawn the snake.
 
@@ -40,11 +42,15 @@ int main(void) {
 
         draw_walls(pGame); // Draw the walls of the game.
 
-        update_snake(pGame);
+        if(!pGame->game_over) {
+            update_snake(pGame);
+        }
+
+        check_collision(pGame);
 
         SDL_RenderPresent(pGame->renderer); // Update the screen
 
-        SDL_Delay(250);
+        SDL_Delay(100);
     }
 
     free(pGame->snake);

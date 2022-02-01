@@ -24,6 +24,7 @@ typedef struct
     SDL_Rect *snake;
 
     bool running;
+    bool game_over;
 } t_game;
 
 #endif //SNAKE_TYPES_H

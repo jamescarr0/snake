@@ -17,7 +17,7 @@ void update_snake(t_game *pGame) {
     pGame->snake[0].h = pGame->snake_seg_size;
 
     // Remove the tail after a new head has been created.
-    for (int i = 4; i < pGame->snake_arr_len; ++i) {
+    for (int i = 1; i < pGame->snake_arr_len; ++i) {
         if(pGame->snake[i].w == 0) {
             pGame->snake[i-1].x = 0;
             pGame->snake[i-1].y = 0;

@@ -9,6 +9,6 @@ set(SDL2_LIB_DIR /opt/homebrew/Cellar/sdl2/2.0.20/lib)
 include_directories(${SDL2_INCLUDE_DIR})
 link_directories(${SDL2_LIB_DIR})
 
-add_executable(snake src/main.c include/types.h include/init_sdl.h include/check_btn_pressed.h include/terminate.h src/check_btn_pressed.c src/terminate.c src/init_sdl.c include/draw_walls.h src/draw_walls.c src/draw_snake.c include/draw_snake.h src/spawn_snake.c include/spawn_snake.h include/update_snake.h src/update_snake.c include/change_direction.h src/change_direction.c)
+add_executable(snake src/main.c include/types.h include/init_sdl.h include/check_btn_pressed.h include/terminate.h src/check_btn_pressed.c src/terminate.c src/init_sdl.c include/draw_walls.h src/draw_walls.c src/draw_snake.c include/draw_snake.h src/spawn_snake.c include/spawn_snake.h include/update_snake.h src/update_snake.c include/change_direction.h src/change_direction.c src/check_collision.c include/check_collision.h)
 
 target_link_libraries(${PROJECT_NAME} SDL2main SDL2)
