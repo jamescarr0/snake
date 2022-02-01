@@ -27,7 +27,8 @@ int main(void) {
     pGame->food.h = SEGMENT_SIZE;
     pGame->food.w = SEGMENT_SIZE;
     pGame->game_score = 0;
-    pGame->grow_snake;
+    pGame->grow_snake = false;
+    pGame->game_speed = 100;
 
     init_sdl(pGame); // Init SDL
 
@@ -61,7 +62,7 @@ int main(void) {
 
         SDL_RenderPresent(pGame->renderer); // Update the screen
 
-        SDL_Delay(100);
+        SDL_Delay(pGame->game_speed);
     }
 
     free(pGame->snake);

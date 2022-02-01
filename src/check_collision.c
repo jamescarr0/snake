@@ -18,9 +18,15 @@ void check_collision(t_game *pGame) {
 
     /* Food Collision */
     if(pGame->snake[0].x == pGame->food.x && pGame->snake[0].y == pGame->food.y) {
+        // Snake has eaten food.
+
         spawn_food(pGame); // Spawn another food item.
-        pGame->grow_snake = true;
-        update_score(pGame);
+
+        pGame->grow_snake = true; // Set grow snake flag true to increase snake size.
+
+        --pGame->game_speed; // Decrement the delay between game loop (increases game speed)
+
+        update_score(pGame);    // Update the score
     }
 
 }

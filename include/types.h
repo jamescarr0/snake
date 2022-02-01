@@ -19,6 +19,7 @@ typedef struct
     int snake_arr_len;
 
     int game_score;
+    int game_speed;
 
     SDL_Renderer *renderer;
     SDL_Window *window;
