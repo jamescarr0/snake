@@ -15,7 +15,6 @@ typedef struct
     int snake_seg_size;
     int snake_dx;
     int snake_yx;
-    int snake_direction;
     int snake_arr_len;
 
     int game_score;

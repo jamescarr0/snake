@@ -46,7 +46,7 @@ int main(void) {
         SDL_SetRenderDrawColor(pGame->renderer, SCREEN_BACKGROUND);
         SDL_RenderClear(pGame->renderer);
 
-        check_btn_pressed(pGame); // Check for button pressed events.
+        check_btn_pressed(pGame); // Check for button pressed event.
 
         draw_snake(pGame); // Draw snake
 
