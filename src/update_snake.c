@@ -7,7 +7,7 @@
 void update_snake(t_game *pGame) {
 // Shift elements to the right and create a new head.
     for (int i = (pGame->snake_arr_len - 1); i >= 0; --i) {
-        pGame->snake[i] = pGame->snake[i-1]; // Shift right
+        pGame->snake[i] = pGame->snake[i - 1]; // Shift right
     }
 
     // Insert a new head at the start of the array.
@@ -16,14 +16,19 @@ void update_snake(t_game *pGame) {
     pGame->snake[0].w = pGame->snake_seg_size;
     pGame->snake[0].h = pGame->snake_seg_size;
 
-    // Remove the tail after a new head has been created.
-    for (int i = 1; i < pGame->snake_arr_len; ++i) {
-        if(pGame->snake[i].w == 0) {
-            pGame->snake[i-1].x = 0;
-            pGame->snake[i-1].y = 0;
-            pGame->snake[i-1].w = 0;
-            pGame->snake[i-1].h = 0;
-            break;
+
+    if (pGame->grow_snake) {
+        pGame->grow_snake = false;
+    } else {
+        // Remove the tail after a new head has been created.
+        for (int i = 5; i < pGame->snake_arr_len; ++i) {
+            if (pGame->snake[i].w == 0) {
+                pGame->snake[i - 1].x = 0;
+                pGame->snake[i - 1].y = 0;
+                pGame->snake[i - 1].w = 0;
+                pGame->snake[i - 1].h = 0;
+                break;
+            }
         }
     }
 }

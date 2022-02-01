@@ -28,6 +28,7 @@ typedef struct
 
     bool running;
     bool game_over;
+    bool grow_snake;
 } t_game;
 
 #endif //SNAKE_TYPES_H

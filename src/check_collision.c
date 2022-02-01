@@ -19,6 +19,7 @@ void check_collision(t_game *pGame) {
     /* Food Collision */
     if(pGame->snake[0].x == pGame->food.x && pGame->snake[0].y == pGame->food.y) {
         spawn_food(pGame); // Spawn another food item.
+        pGame->grow_snake = true;
         update_score(pGame);
     }
 
