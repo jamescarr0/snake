@@ -17,7 +17,7 @@ void check_collision(t_game *pGame) {
     }
 
     /* Food Collision */
-    if(pGame->snake[0].x == pGame->food.x && pGame->snake[0].y == pGame->food.y) {
+    if (pGame->snake[0].x == pGame->food.x && pGame->snake[0].y == pGame->food.y) {
         // Snake has eaten food.
 
         spawn_food(pGame); // Spawn another food item.
@@ -27,6 +27,14 @@ void check_collision(t_game *pGame) {
         --pGame->game_speed; // Decrement the delay between game loop (increases game speed)
 
         update_score(pGame);    // Update the score
+    }
+
+    /* Check for snake colliding with itself */
+    for (int i = 1; i < pGame->snake_arr_len; ++i) {
+        if (pGame->snake[0].x == pGame->snake[i].x && pGame->snake[0].y == pGame->snake[i].y) {
+            pGame->game_over = true;
+            break;
+        }
     }
 
 }
