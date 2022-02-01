@@ -26,6 +26,7 @@ int main(void) {
     pGame->snake_yx = 0;
     pGame->food.h = SEGMENT_SIZE;
     pGame->food.w = SEGMENT_SIZE;
+    pGame->game_score = 0;
 
     init_sdl(pGame); // Init SDL
 

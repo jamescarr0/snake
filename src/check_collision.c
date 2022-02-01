@@ -4,6 +4,7 @@
 
 #include "../include/types.h"
 #include "../include/spawn_food.h"
+#include "../include/update_score.h"
 
 void check_collision(t_game *pGame) {
 
@@ -17,7 +18,8 @@ void check_collision(t_game *pGame) {
 
     /* Food Collision */
     if(pGame->snake[0].x == pGame->food.x && pGame->snake[0].y == pGame->food.y) {
-        spawn_food(pGame);
+        spawn_food(pGame); // Spawn another food item.
+        update_score(pGame);
     }
 
 }

@@ -18,6 +18,8 @@ typedef struct
     int snake_direction;
     int snake_arr_len;
 
+    int game_score;
+
     SDL_Renderer *renderer;
     SDL_Window *window;
 
