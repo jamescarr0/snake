@@ -15,6 +15,7 @@ typedef struct
     int snake_seg_size;
     int x_pos;
     int y_pos;
+    int snake_direction;
 
     int snake_arr_len;
 

@@ -43,4 +43,7 @@ void spawn_snake(t_game *pGame) {
         pGame->snake[i].w = pGame->snake_seg_size;
         pGame->snake[i].h = pGame->snake_seg_size;
     }
+
+    // Set initial direction
+    pGame->snake_direction = 2;
 }
