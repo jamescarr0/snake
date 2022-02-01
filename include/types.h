@@ -13,15 +13,16 @@ typedef struct
     int screen_width;
     int wall_thickness;
     int snake_seg_size;
-    int x_pos;
-    int y_pos;
+    int snake_dx;
+    int snake_yx;
     int snake_direction;
-
     int snake_arr_len;
 
     SDL_Renderer *renderer;
     SDL_Window *window;
+
     SDL_Rect *snake;
+    SDL_Rect food;
 
     bool running;
     bool game_over;

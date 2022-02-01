@@ -11,8 +11,8 @@ void update_snake(t_game *pGame) {
     }
 
     // Insert a new head at the start of the array.
-    pGame->snake[0].x = pGame->snake[1].x + pGame->x_pos;
-    pGame->snake[0].y = pGame->snake[1].y + pGame->y_pos;
+    pGame->snake[0].x = pGame->snake[1].x + pGame->snake_dx;
+    pGame->snake[0].y = pGame->snake[1].y + pGame->snake_yx;
     pGame->snake[0].w = pGame->snake_seg_size;
     pGame->snake[0].h = pGame->snake_seg_size;
 

@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
 
@@ -9,17 +10,22 @@
 #include "../include/draw_snake.h"
 #include "../include/update_snake.h"
 #include "../include/check_collision.h"
+#include "../include/spawn_food.h"
+#include "../include/draw_food.h"
 
 #define SCREEN_BACKGROUND 0, 100, 25, 255
+#define SEGMENT_SIZE 20
 
 int main(void) {
     t_game *pGame = malloc(sizeof(t_game));
     pGame->screen_height = 640;
     pGame->screen_width = 1040;
-    pGame->wall_thickness = 20;
-    pGame->snake_seg_size = 20;
-    pGame->x_pos = pGame->snake_seg_size;
-    pGame->y_pos = 0;
+    pGame->wall_thickness = SEGMENT_SIZE;
+    pGame->snake_seg_size = SEGMENT_SIZE;
+    pGame->snake_dx = SEGMENT_SIZE;
+    pGame->snake_yx = 0;
+    pGame->food.h = SEGMENT_SIZE;
+    pGame->food.w = SEGMENT_SIZE;
 
     init_sdl(pGame); // Init SDL
 
@@ -28,6 +34,7 @@ int main(void) {
     pGame->game_over = false;
 
     spawn_snake(pGame); // Create and spawn the snake.
+    spawn_food(pGame);
 
     // Main game loop
     while (pGame->running) {
@@ -42,11 +49,13 @@ int main(void) {
 
         draw_walls(pGame); // Draw the walls of the game.
 
-        if(!pGame->game_over) {
-            update_snake(pGame);
+        if (!pGame->game_over) {
+            update_snake(pGame); // Update snakes position.
         }
 
-        check_collision(pGame);
+        draw_food(pGame);
+
+        check_collision(pGame); // check for collisions.
 
         SDL_RenderPresent(pGame->renderer); // Update the screen
 
