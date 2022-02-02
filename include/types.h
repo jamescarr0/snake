@@ -8,6 +8,11 @@
 #ifndef SNAKE_TYPES_H
 #define SNAKE_TYPES_H
 
+enum sfx {
+    POINT_SCORED,
+    GAME_OVER,
+};
+
 typedef struct
 {
     int screen_height;
@@ -27,7 +32,7 @@ typedef struct
     SDL_Rect *snake;
     SDL_Rect food;
 
-    Mix_Music *sfx_eat;
+    Mix_Music *sfx;
 
     bool running;
     bool game_over;

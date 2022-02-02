@@ -13,5 +13,7 @@ void update_score(t_game *pGame) {
 
     // Set the new score.
     SDL_SetWindowTitle(pGame->window, score);
-    play_sfx(pGame);
+
+    // Play point scored sound effect.
+    play_sfx(pGame, POINT_SCORED);
 }

@@ -17,7 +17,7 @@ void terminate(t_game *pGame, int exit_code)
 
 
     Mix_Quit();
-    Mix_FreeMusic(pGame->sfx_eat);
+    Mix_FreeMusic(pGame->sfx);
     Mix_CloseAudio();
 
     free(pGame->snake);

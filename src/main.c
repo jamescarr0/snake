@@ -29,7 +29,7 @@ int main(void) {
     pGame->food.w = SEGMENT_SIZE;
     pGame->game_score = 0;
     pGame->grow_snake = false;
-    pGame->game_speed = 100;
+    pGame->game_speed = 90;
 
     init_sdl(pGame); // Init SDL
 
@@ -53,13 +53,12 @@ int main(void) {
 
         draw_walls(pGame); // Draw the walls of the game.
 
-        if (!pGame->game_over) {
-            update_snake(pGame); // Update snakes position.
-        }
-
         draw_food(pGame);
 
-        check_collision(pGame); // check for collisions.
+        if (!pGame->game_over) {
+            update_snake(pGame); // Update snakes position unless game over
+            check_collision(pGame); // check for collisions.
+        }
 
         SDL_RenderPresent(pGame->renderer); // Update the screen
 

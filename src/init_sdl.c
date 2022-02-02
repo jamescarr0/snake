@@ -38,9 +38,8 @@ bool init_sdl(t_game *pGame)
         terminate(pGame, EXIT_FAILURE);
     }
 
-    // Init Audio and set filepaths to sound effects.
+    // Open Audio
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
-    pGame->sfx_eat = Mix_LoadMUS("/Users/james/Desktop/sfx1.mp3");
 
     return true;
 }

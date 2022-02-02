@@ -5,6 +5,7 @@
 #include "../include/types.h"
 #include "../include/spawn_food.h"
 #include "../include/update_score.h"
+#include "../include/play_sfx.h"
 
 void check_collision(t_game *pGame) {
 
@@ -36,5 +37,8 @@ void check_collision(t_game *pGame) {
             break;
         }
     }
+
+    if(pGame->game_over)
+        play_sfx(pGame, GAME_OVER); // If game over play game over sfx
 
 }
