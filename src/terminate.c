@@ -2,7 +2,6 @@
 // Created by James Carr on 30/01/2022.
 //
 
-#include <SDL2/SDL.h>
 #include "../include/types.h"
 
 void terminate(t_game *pGame, int exit_code)
@@ -16,6 +15,19 @@ void terminate(t_game *pGame, int exit_code)
         SDL_DestroyWindow(pGame->window);
     }
 
+
+    Mix_Quit();
+    Mix_FreeMusic(pGame->sfx_eat);
+    Mix_CloseAudio();
+
+    free(pGame->snake);
+    free(pGame);
+
     SDL_Quit();
-    exit(exit_code);
+
+    if(exit_code == 0) {
+        return;
+    } else {
+        exit(exit_code);
+    }
 }

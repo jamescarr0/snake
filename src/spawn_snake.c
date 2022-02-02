@@ -2,7 +2,6 @@
 // Created by James Carr on 31/01/2022.
 //
 
-#include <SDL2/SDL.h>
 #include "../include/types.h"
 
 /* Snake body 30x30 pixels */

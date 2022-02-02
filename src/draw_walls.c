@@ -4,7 +4,6 @@
 // Setup and draw the walls of the game to the render target.
 //
 
-#include <SDL2/SDL.h>
 #include "../include/types.h"
 
 #define WALL_COLOUR 0, 0, 0, 255

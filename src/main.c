@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 #include "../include/types.h"
 #include "../include/check_btn_pressed.h"
@@ -12,6 +12,7 @@
 #include "../include/check_collision.h"
 #include "../include/spawn_food.h"
 #include "../include/draw_food.h"
+#include "../include/terminate.h"
 
 #define SCREEN_BACKGROUND 0, 90, 55, 255
 #define SEGMENT_SIZE 20
@@ -65,8 +66,7 @@ int main(void) {
         SDL_Delay(pGame->game_speed);
     }
 
-    free(pGame->snake);
-    free(pGame);
+    terminate(pGame, 0);
 
     return 0;
 }

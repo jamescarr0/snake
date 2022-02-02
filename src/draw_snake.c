@@ -2,7 +2,6 @@
 // Created by James Carr on 30/01/2022.
 //
 
-#include <SDL2/SDL.h>
 #include "../include/types.h"
 
 #define ALIVE_SNAKE_COLOUR 0, 0, 0, 255

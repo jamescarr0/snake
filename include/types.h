@@ -1,7 +1,8 @@
 //
 // Created by James Carr on 30/01/2022.
 //
-#include <SDL2/SDL.h>
+#include <SDL.h>
+#include <SDL_mixer.h>
 #include <stdbool.h>
 
 #ifndef SNAKE_TYPES_H
@@ -25,6 +26,8 @@ typedef struct
 
     SDL_Rect *snake;
     SDL_Rect food;
+
+    Mix_Music *sfx_eat;
 
     bool running;
     bool game_over;
