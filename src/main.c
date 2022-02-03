@@ -1,6 +1,11 @@
 #include <stdlib.h>
 #include <stdbool.h>
+
+#ifdef __APPLE__
 #include <SDL.h>
+#else
+#include <SDL2/SDL.h>
+#endif
 
 #include "../include/types.h"
 #include "../include/check_btn_pressed.h"

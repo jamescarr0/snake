@@ -3,8 +3,6 @@
 //
 
 #include <stdio.h>
-#include <stdbool.h>
-#include <SDL.h>
 #include "../include/types.h"
 #include "../include/terminate.h"
 

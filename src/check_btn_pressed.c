@@ -2,7 +2,6 @@
 // Created by James Carr on 30/01/2022.
 //
 
-#include <stdbool.h>
 #include "../include/types.h"
 #include "../include/change_direction.h"
 

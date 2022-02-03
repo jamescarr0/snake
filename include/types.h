@@ -1,8 +1,15 @@
 //
 // Created by James Carr on 30/01/2022.
 //
+
+#ifdef __APPLE__
 #include <SDL.h>
 #include <SDL_mixer.h>
+#else
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_mixer.h>
+#endif
+
 #include <stdbool.h>
 
 #ifndef SNAKE_TYPES_H
