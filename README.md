@@ -3,38 +3,26 @@
 
 <hr />
 
-### Run the game: Mac
-<hr />
+### Run the game
+#### Mac
+<code>brew install sdl2 sdl2_mixer</code>
 
-brew install sdl2 sdl2_mixer
+#### Linux
+<code>sudo apt install libsdl2-dev libsdl2-mixer-dev</code>
 
-<br>
-clone https://github.com/jamescarr0/snake <br>
+#### Compile
+<code>
+clone https://github.com/jamescarr0/snake<br>
 cd snake <br>
-mkdir build<br>
 cmake -Bbuild/<br>
 cd build<br>
 make<br>
+</code>
 
 ##### Binary
 ./snake<br>
 
 <hr />
 
-### Run the game: Linux
-
-Install libsdl2-dev libsdl2-mixer-dev
-
-<hr />
-<br>
-clone https://github.com/jamescarr0/snake <br>
-cd snake <br>
-<b>sh patch_linux.sh</b><br> 
-mkdir build<br>
-cmake -Bbuild/<br>
-cd build<br>
-make<br>
-
-##### Binary
-./snake<br>
-
+#### Play SNAKE!
+<code>./snake</code>
