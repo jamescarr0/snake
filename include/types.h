@@ -42,7 +42,8 @@ typedef struct
     SDL_Rect *snake;
     SDL_Rect food;
 
-    Mix_Music *sfx;
+    Mix_Music *sfx_game_over;
+    Mix_Music *sfx_score_point;
 
     TTF_Font *font;
 

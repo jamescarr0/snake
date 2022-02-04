@@ -15,9 +15,9 @@ void terminate(t_game *pGame, int exit_code)
         SDL_DestroyWindow(pGame->window);
     }
 
-
     Mix_Quit();
-    Mix_FreeMusic(pGame->sfx);
+    Mix_FreeMusic(pGame->sfx_score_point);
+    Mix_FreeMusic(pGame->sfx_game_over);
     Mix_CloseAudio();
 
     free(pGame->snake);

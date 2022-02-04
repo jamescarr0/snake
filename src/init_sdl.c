@@ -42,8 +42,10 @@ bool init_sdl(t_game *pGame)
         terminate(pGame, EXIT_FAILURE);
     }
 
-    // Open Audio
+    // Open and Load Audio
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 512);
+    pGame->sfx_score_point = Mix_LoadMUS("../sounds/score_point.mp3");
+    pGame->sfx_game_over = Mix_LoadMUS("../sounds/game_over.mp3");
 
     // Load fonts.
     pGame->font = TTF_OpenFont("../fonts/orange-kid.TTF", 48);

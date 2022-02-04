@@ -7,13 +7,12 @@
 void play_sfx(t_game *const pGame, int const sfx) {
     switch (sfx) {
         case POINT_SCORED:
-            pGame->sfx = Mix_LoadMUS("../sounds/sfx1.mp3");
+            Mix_PlayMusic(pGame->sfx_score_point, 1);
             break;
         case GAME_OVER:
-            pGame->sfx = Mix_LoadMUS("../sounds/game_over.mp3");
+            Mix_PlayMusic(pGame->sfx_game_over, 1);
             break;
         default:
             break;
     }
-    Mix_PlayMusic(pGame->sfx, 1);
 }
