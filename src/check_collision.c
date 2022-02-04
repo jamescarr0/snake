@@ -13,7 +13,7 @@ void check_collision(t_game *pGame) {
     if (pGame->snake[0].x > ((pGame->screen_width) - (pGame->wall_thickness) - pGame->snake_seg_size) ||
         (pGame->snake[0].x < pGame->wall_thickness) ||
         ((pGame->snake[0].y + pGame->snake_seg_size) > (pGame->screen_height - pGame->wall_thickness)) ||
-        (pGame->snake[0].y < pGame->wall_thickness)) {
+        (pGame->snake[0].y < pGame->wall_thickness + pGame->top_wall_padding)) {
         pGame->game_over = true;
     }
 

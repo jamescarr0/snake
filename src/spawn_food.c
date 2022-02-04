@@ -19,7 +19,7 @@ void spawn_food(t_game *pGame) {
 
         // If food is spawned in the wall, adjust and place inside wall on the map.
         if (x == 0) x += pGame->wall_thickness;
-        if (y == 0) y += pGame->wall_thickness;
+        if (y < pGame->wall_thickness+pGame->top_wall_padding) y += pGame->wall_thickness + pGame->top_wall_padding;
 
         // DO NOT spawn food on snake body segments.
         for (int i = 0; i < pGame->snake_arr_len; ++i) {

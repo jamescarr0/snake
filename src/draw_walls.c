@@ -30,7 +30,7 @@ void draw_walls(t_game *pGame) {
     wall_rect.x = 0;
     wall_rect.y = 0;
     wall_rect.w = pGame->screen_width;
-    wall_rect.h = pGame->wall_thickness;
+    wall_rect.h = pGame->wall_thickness + pGame->top_wall_padding;
     SDL_RenderFillRect(pGame->renderer, &wall_rect);
 
     // Create a bottom wall and fill

@@ -3,8 +3,11 @@
 
 #ifdef __APPLE__
 #include <SDL.h>
+#include <SDL_ttf.h>
+
 #else
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 #endif
 
 #include "../include/types.h"
@@ -18,6 +21,7 @@
 #include "../include/spawn_food.h"
 #include "../include/draw_food.h"
 #include "../include/terminate.h"
+#include "../include/draw_score.h"
 
 #define SCREEN_BACKGROUND 0, 90, 55, 255
 #define SEGMENT_SIZE 20
@@ -27,6 +31,7 @@ int main(void) {
     pGame->screen_height = 640;
     pGame->screen_width = 1040;
     pGame->wall_thickness = SEGMENT_SIZE;
+    pGame->top_wall_padding = 60;
     pGame->snake_seg_size = SEGMENT_SIZE;
     pGame->snake_dx = SEGMENT_SIZE;
     pGame->snake_yx = 0;
@@ -59,6 +64,8 @@ int main(void) {
         draw_walls(pGame); // Draw the walls of the game.
 
         draw_food(pGame);
+
+        draw_score(pGame);
 
         if (!pGame->game_over) {
             update_snake(pGame); // Update snakes position unless game over

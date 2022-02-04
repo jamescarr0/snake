@@ -5,9 +5,11 @@
 #ifdef __APPLE__
 #include <SDL.h>
 #include <SDL_mixer.h>
+#include <SDL_ttf.h>
 #else
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mixer.h>
+#include <SDL2/SDL_ttf.h>
 #endif
 
 #include <stdbool.h>
@@ -25,6 +27,7 @@ typedef struct
     int screen_height;
     int screen_width;
     int wall_thickness;
+    int top_wall_padding;
     int snake_seg_size;
     int snake_dx;
     int snake_yx;
@@ -40,6 +43,8 @@ typedef struct
     SDL_Rect food;
 
     Mix_Music *sfx;
+
+    TTF_Font *font;
 
     bool running;
     bool game_over;

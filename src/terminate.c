@@ -23,6 +23,7 @@ void terminate(t_game *pGame, int exit_code)
     free(pGame->snake);
     free(pGame);
 
+    TTF_Quit();
     SDL_Quit();
 
     if(exit_code == 0) {

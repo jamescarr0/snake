@@ -14,8 +14,14 @@ bool init_sdl(t_game *pGame)
         terminate(pGame, EXIT_FAILURE);
     }
 
+    if (TTF_Init() < 0)
+    {
+        printf("Error: failed to initialize SDL_TTF: %s\n", TTF_GetError());
+        terminate(pGame, EXIT_FAILURE);
+    }
+
     // Create a game window.
-    pGame->window = SDL_CreateWindow("Score: 0",
+    pGame->window = SDL_CreateWindow("SNAKE",
                                      SDL_WINDOWPOS_UNDEFINED,
                                      SDL_WINDOWPOS_UNDEFINED,
                                      pGame->screen_width,
@@ -37,7 +43,10 @@ bool init_sdl(t_game *pGame)
     }
 
     // Open Audio
-    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 512);
+
+    // Load fonts.
+    pGame->font = TTF_OpenFont("../fonts/orange-kid.TTF", 48);
 
     return true;
 }
