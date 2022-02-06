@@ -4,7 +4,7 @@
 
 #include "../include/types.h"
 
-void draw_score(t_game *pGame) {
+void draw_score(t_game const *const pGame) {
     TTF_Font *font = pGame->font;
 
     SDL_Color color = {255, 255, 255};

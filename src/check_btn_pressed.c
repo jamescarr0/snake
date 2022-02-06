@@ -5,7 +5,7 @@
 #include "../include/types.h"
 #include "../include/change_direction.h"
 
-void check_btn_pressed(t_game *pGame) {
+void check_btn_pressed(t_game *const pGame) {
 
     SDL_Event event;
     while (SDL_PollEvent(&event)) {

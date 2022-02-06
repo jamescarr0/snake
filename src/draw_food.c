@@ -4,7 +4,7 @@
 
 #include "../include/types.h"
 
-void draw_food(t_game *pGame) {
+void draw_food(t_game const *const pGame) {
     SDL_Rect shadow;
 
     shadow = pGame->food;

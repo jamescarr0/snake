@@ -7,7 +7,7 @@
 #include "../include/update_score.h"
 #include "../include/play_sfx.h"
 
-void check_collision(t_game *pGame) {
+void check_collision(t_game *const pGame) {
 
     /* Wall Collisions */
     if (pGame->snake[0].x > ((pGame->screen_width) - (pGame->wall_thickness) - pGame->snake_seg_size) ||

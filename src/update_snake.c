@@ -4,7 +4,7 @@
 
 #include "../include/types.h"
 
-void update_snake(t_game *pGame) {
+void update_snake(t_game *const pGame) {
 // Shift elements to the right and create a new head.
     for (int i = (pGame->snake_arr_len - 1); i >= 0; --i) {
         pGame->snake[i] = pGame->snake[i - 1]; // Shift right

@@ -6,7 +6,7 @@
 #include "../include/types.h"
 #include "../include/terminate.h"
 
-bool init_sdl(t_game *pGame)
+bool init_sdl(t_game *const pGame)
 {
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0)
     {

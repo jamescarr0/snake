@@ -7,7 +7,7 @@
 #define ALIVE_SNAKE_COLOUR 0, 0, 0, 255
 #define DEAD_SNAKE_COLOUR 180, 0, 0, 255
 
-void draw_snake(t_game *pGame) {
+void draw_snake(t_game const *const pGame) {
     SDL_Rect shadow[pGame->snake_arr_len];
 
     for (int i = 0; i < pGame->snake_arr_len; ++i) {

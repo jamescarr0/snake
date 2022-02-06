@@ -29,7 +29,7 @@
 int main(void) {
     t_game *pGame = malloc(sizeof(t_game));
     pGame->screen_height = 640;
-    pGame->screen_width = 1040;
+    pGame->screen_width = 640;
     pGame->wall_thickness = SEGMENT_SIZE;
     pGame->top_wall_padding = 60;
     pGame->snake_seg_size = SEGMENT_SIZE;
@@ -38,8 +38,7 @@ int main(void) {
     pGame->food.h = SEGMENT_SIZE;
     pGame->food.w = SEGMENT_SIZE;
     pGame->game_score = 0;
-    pGame->grow_snake = false;
-    pGame->game_speed = 90;
+    pGame->game_speed = 100;
 
     init_sdl(pGame); // Init SDL
 
