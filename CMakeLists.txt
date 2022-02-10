@@ -1,8 +1,14 @@
 cmake_minimum_required(VERSION 3.20)
 project(snake C)
 
-set(CMAKE_C_STANDARD 11)
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 message(STATUS ${CMAKE_MODULE_PATH})
 
