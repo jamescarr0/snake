@@ -4,7 +4,7 @@
 
 #include "../include/types.h"
 
-void change_direction(t_game *const pGame, SDL_KeyCode const btn_pressed) {
+void change_direction(t_game *const pGame, SDL_Keycode const btn_pressed) {
 
     switch (btn_pressed) {
         case SDLK_UP:
