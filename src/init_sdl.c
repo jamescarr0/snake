@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "../include/types.h"
 #include "../include/terminate.h"
 
@@ -49,13 +50,16 @@ bool init_sdl(t_game *const pGame) {
 
     // Load fonts.
     char *font = "../fonts/orange-kid.ttf";
-    char abspath[256];
+    char pathBuf[PATH_MAX];
     char *pAbsFontPath;
 
 #ifdef _WIN32
-    pAbsFontPath = GetFullPathName(font, 256, abspath, "");
+    char filename[] = "..\\fonts\\orange-kid.ttf";
+    char fullFilename[MAX_PATH];
+    GetFullPathName(filename, MAX_PATH, fullFilename, nullptr);
+    pAbsFontPath = fullFilename;
 #else
-    pAbsFontPath = realpath(font, abspath);
+    pAbsFontPath = realpath(font, pathBuf);
 #endif
 
     pGame->font = TTF_OpenFont(pAbsFontPath, 48);
