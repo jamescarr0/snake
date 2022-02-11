@@ -1,13 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 project(snake C)
 
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif()
-
-
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 message(STATUS ${CMAKE_MODULE_PATH})
@@ -53,7 +47,7 @@ ENDIF()
 
 Message("")
 
-add_executable(snake src/main.c include/types.h include/init_sdl.h include/check_btn_pressed.h include/terminate.h src/check_btn_pressed.c src/terminate.c src/init_sdl.c include/draw_walls.h src/draw_walls.c src/draw_snake.c include/draw_snake.h src/spawn_snake.c include/spawn_snake.h include/update_snake.h src/update_snake.c include/change_direction.h src/change_direction.c src/check_collision.c include/check_collision.h include/spawn_food.h include/draw_food.h src/draw_food.c src/spawn_food.c include/update_score.h src/update_score.c src/play_sfx.c include/play_sfx.h include/draw_score.h src/draw_score.c)
+add_executable(snake src/main.c include/types.h include/init_sdl.h include/check_btn_pressed.h include/terminate.h src/check_btn_pressed.c src/terminate.c src/init_sdl.c include/draw_walls.h src/draw_walls.c src/draw_snake.c include/draw_snake.h src/spawn_snake.c include/spawn_snake.h include/update_snake.h src/update_snake.c include/change_direction.h src/change_direction.c src/check_collision.c include/check_collision.h include/spawn_food.h include/draw_food.h src/draw_food.c src/spawn_food.c include/update_score.h src/update_score.c src/play_sfx.c include/play_sfx.h include/draw_score.h src/draw_score.c src/init_game.c include/init_game.h)
 
 INCLUDE_DIRECTORIES(${SDL2_INCLUDE_DIRS} ${SDL2_MIXER_INCLUDE_DIRS} ${SDL2TTF_INCLUDE_DIR})
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${SDL2_LIBRARIES} ${SDL2_MIXER_LIBRARIES} ${SDL2TTF_LIBRARY})

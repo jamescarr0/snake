@@ -36,7 +36,8 @@ bool init_sdl(t_game *const pGame) {
     }
 
     SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
-    pGame->renderer = SDL_CreateRenderer(pGame->window, -1, SDL_RENDERER_ACCELERATED);
+    pGame->renderer = SDL_CreateRenderer(pGame->window, -1,
+                                         SDL_RENDERER_ACCELERATED);
 
     if (!pGame->renderer) {
         printf("error: failed to create renderer: %s\n", SDL_GetError());

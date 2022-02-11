@@ -1,9 +1,8 @@
-#include <stdlib.h>
 #include <stdbool.h>
+#include "../include/init_game.h"
 
 #ifdef __APPLE__
 #include <SDL.h>
-#include <SDL_ttf.h>
 
 #else
 #include <SDL2/SDL.h>
@@ -24,29 +23,18 @@
 #include "../include/draw_score.h"
 
 #define SCREEN_BACKGROUND 0, 90, 55, 255
-#define SEGMENT_SIZE 20
 
 int main(void) {
-    t_game *pGame = malloc(sizeof(t_game));
-    pGame->screen_height = 640;
-    pGame->screen_width = 640;
-    pGame->wall_thickness = SEGMENT_SIZE;
-    pGame->top_wall_padding = 60;
-    pGame->snake_seg_size = SEGMENT_SIZE;
-    pGame->snake_dx = SEGMENT_SIZE;
-    pGame->snake_yx = 0;
-    pGame->food.h = SEGMENT_SIZE;
-    pGame->food.w = SEGMENT_SIZE;
-    pGame->game_score = 0;
-    pGame->game_speed = 100;
+    // Initialise a new game.
+    t_game *pGame = init_game();
 
     init_sdl(pGame); // Init SDL
 
-    // Init successful set game state.
+    // SDL Init successful set game state.
     pGame->running = true;
-    pGame->game_over = false;
 
-    spawn_snake(pGame); // Create and spawn the snake.
+    // Spawn the snake and food.
+    spawn_snake(pGame);
     spawn_food(pGame);
 
     // Main game loop
@@ -57,14 +45,10 @@ int main(void) {
         SDL_RenderClear(pGame->renderer);
 
         check_btn_pressed(pGame); // Check for button pressed event.
-
-        draw_snake(pGame); // Draw snake
-
+        draw_snake(pGame); // Draw snake.
         draw_walls(pGame); // Draw the walls of the game.
-
-        draw_food(pGame);
-
-        draw_score(pGame);
+        draw_food(pGame); // Draw the food.
+        draw_score(pGame); // Draw the score.
 
         if (!pGame->game_over) {
             update_snake(pGame); // Update snakes position unless game over
@@ -72,11 +56,10 @@ int main(void) {
         }
 
         SDL_RenderPresent(pGame->renderer); // Update the screen
-
-        SDL_Delay(pGame->game_speed);
+        SDL_Delay(pGame->game_speed); // Control the speed of gameplay
     }
 
-    terminate(pGame, 0);
+    terminate(pGame, 0); // Clean up.
 
     return 0;
 }
