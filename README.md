@@ -1,14 +1,14 @@
 # SNAKE
 ## A retro classic written in C and SDL.
 
+![Game Play](img/snake.png)
+
 <hr />
 
 ### Run the game
-#### Mac
-<code>brew install sdl2 sdl2_mixer</code>
 
-#### Linux
-<code>sudo apt install libsdl2-dev libsdl2-mixer-dev</code>
+#### Dependencies
+Ensure that SDL2, SDL2_Mixer and SDL2_TTF are installed.
 
 #### Compile
 <code>
@@ -26,3 +26,7 @@ make<br>
 
 #### Play SNAKE!
 <code>./snake</code>
+
+#### Controls
+Use arrow keys, up, down, left, and right to control the snake.
+Press 'p' to pause and unpause the game.

@@ -8,7 +8,7 @@
 
 #define WALL_COLOUR 0, 0, 0, 255
 
-void draw_walls(t_game const *const pGame) {
+void draw_walls(Game const *const pGame) {
     SDL_SetRenderDrawColor(pGame->renderer, WALL_COLOUR); // Set the walls colour
 
     // Initialise and create the LEFT wall.

@@ -4,7 +4,7 @@
 
 #include "../include/types.h"
 
-void spawn_food(t_game *pGame) {
+void spawn_food(Game *pGame) {
     // Randomly generate x and y co-ordinates for food.
 
     int food_xy_set = false;

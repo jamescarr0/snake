@@ -6,8 +6,8 @@
 
 #define SEGMENT_SIZE 20
 
-t_game *init_game() {
-    t_game *pGame = malloc(sizeof(t_game));
+Game *init_game() {
+    Game *pGame = malloc(sizeof(Game));
     pGame->screen_height = 640;
     pGame->screen_width = 640;
     pGame->wall_thickness = SEGMENT_SIZE;
@@ -20,5 +20,6 @@ t_game *init_game() {
     pGame->game_score = 0;
     pGame->game_speed = 100;
     pGame->game_over = false;
+    pGame->game_paused = false;
     return pGame;
 }

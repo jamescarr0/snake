@@ -9,7 +9,7 @@
 #define SNAKE_START_X 400
 #define SNAKE_START_Y 300
 
-void spawn_snake(t_game *const pGame) {
+void spawn_snake(Game *const pGame) {
 
     int max_snake_length = (pGame->screen_width -
                             (pGame->wall_thickness * 2) * (pGame->screen_height - (pGame->wall_thickness * 2)) /

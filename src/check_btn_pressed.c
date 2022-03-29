@@ -5,7 +5,7 @@
 #include "../include/types.h"
 #include "../include/change_direction.h"
 
-void check_btn_pressed(t_game *const pGame) {
+void check_btn_pressed(Game *const pGame) {
 
     SDL_Event event;
     while (SDL_PollEvent(&event)) {
@@ -38,6 +38,10 @@ void check_btn_pressed(t_game *const pGame) {
                     case SDLK_LEFT:
                         change_direction(pGame, SDLK_LEFT);
                         break;
+
+                    case SDLK_p:
+                        if(pGame->game_paused) pGame->game_paused = false;
+                        else pGame->game_paused = true;
 
                     default:
                         break;

@@ -26,7 +26,7 @@
 
 int main(void) {
     // Initialise a new game.
-    t_game *pGame = init_game();
+    Game *pGame = init_game();
 
     init_sdl(pGame); // Init SDL
 
@@ -39,6 +39,11 @@ int main(void) {
 
     // Main game loop
     while (pGame->running) {
+
+        if(pGame->game_paused){
+            check_btn_pressed(pGame);
+            continue;
+        };
 
         // Set background colour and clear the screen
         SDL_SetRenderDrawColor(pGame->renderer, SCREEN_BACKGROUND);

@@ -5,6 +5,6 @@
 #ifndef SNAKE_DRAW_SNAKE_H
 #define SNAKE_DRAW_SNAKE_H
 
-void draw_snake(t_game *pGame);
+void draw_snake(Game *pGame);
 
 #endif //SNAKE_DRAW_SNAKE_H

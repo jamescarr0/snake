@@ -5,6 +5,6 @@
 #ifndef SNAKE_SPAWN_SNAKE_H
 #define SNAKE_SPAWN_SNAKE_H
 
-void spawn_snake(t_game *pGame);
+void spawn_snake(Game *pGame);
 
 #endif //SNAKE_SPAWN_SNAKE_H

@@ -5,7 +5,7 @@
 #include "../include/types.h"
 #include "../include/play_sfx.h"
 
-void update_score(t_game *const pGame) {
+void update_score(Game *const pGame) {
 
     pGame->game_score++;
 

@@ -50,6 +50,7 @@ typedef struct
     bool running;
     bool game_over;
     bool grow_snake;
-} t_game;
+    bool game_paused;
+} Game;
 
 #endif //SNAKE_TYPES_H

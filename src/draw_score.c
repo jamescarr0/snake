@@ -4,7 +4,7 @@
 
 #include "../include/types.h"
 
-void draw_score(t_game const *const pGame) {
+void draw_score(Game const *const pGame) {
     TTF_Font *font = pGame->font;
     if(!font) {
         printf("Error loading font for drawing score: %s\n", TTF_GetError());

@@ -5,6 +5,6 @@
 #ifndef SNAKE_UPDATE_SNAKE_H
 #define SNAKE_UPDATE_SNAKE_H
 
-void update_snake(t_game *pGame);
+void update_snake(Game *pGame);
 
 #endif //SNAKE_UPDATE_SNAKE_H

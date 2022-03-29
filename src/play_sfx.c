@@ -4,7 +4,7 @@
 
 #include "../include/types.h"
 
-void play_sfx(t_game const *const pGame, int const sfx) {
+void play_sfx(Game const *const pGame, int const sfx) {
     switch (sfx) {
         case POINT_SCORED:
             Mix_PlayMusic(pGame->sfx_score_point, 1);

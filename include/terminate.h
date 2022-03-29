@@ -5,6 +5,6 @@
 #ifndef SNAKE_TERMINATE_H
 #define SNAKE_TERMINATE_H
 
-void terminate(t_game *, int exit_code);
+void terminate(Game *, int exit_code);
 
 #endif //SNAKE_TERMINATE_H

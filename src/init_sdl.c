@@ -12,7 +12,7 @@
 #include <windows.h>
 #endif
 
-bool init_sdl(t_game *const pGame) {
+bool init_sdl(Game *const pGame) {
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
         printf("Error: failed to initialize SDL: %s\n", SDL_GetError());
         terminate(pGame, EXIT_FAILURE);

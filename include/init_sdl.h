@@ -5,6 +5,6 @@
 #ifndef SNAKE_INIT_SDL_H
 #define SNAKE_INIT_SDL_H
 
-bool init_sdl(t_game *);
+bool init_sdl(Game *);
 
 #endif //SNAKE_INIT_SDL_H

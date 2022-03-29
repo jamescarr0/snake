@@ -4,7 +4,7 @@
 
 #include "../include/types.h"
 
-void terminate(t_game *const pGame, int const exit_code)
+void terminate(Game *const pGame, int const exit_code)
 {
     if (pGame->renderer)
     {

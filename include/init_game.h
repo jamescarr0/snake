@@ -7,6 +7,6 @@
 
 #include "types.h"
 
-t_game *init_game();
+Game *init_game();
 
 #endif //SNAKE_INIT_GAME_H
