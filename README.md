@@ -11,21 +11,26 @@
 Ensure that SDL2, SDL2_Mixer and SDL2_TTF are installed.
 
 #### Compile
-<code>
-clone https://github.com/jamescarr0/snake<br>
-cd snake <br>
-cmake -Bbuild/<br>
-cd build<br>
-make<br>
-</code>
+
+`clone https://github.com/jamescarr0/snake`
+
+`cd snake`
+
+`cmake -Bbuild/`
+
+`cd build`
+
+`make`
+
+
 
 ##### Binary
-./snake<br>
+`./snake`
 
 <hr />
 
 #### Play SNAKE!
-<code>./snake</code>
+`./snake`
 
 #### Controls
 Use arrow keys, up, down, left, and right to control the snake.
